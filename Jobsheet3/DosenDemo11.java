@@ -32,5 +32,12 @@ public class DosenDemo11 {
             d.tampilkanData();
         }
 
+        DataDosen11 dd = new DataDosen11();
+        dd.dataSemuaDosen11(dosen11);
+        dd.jumlahDosenPerJenisKelamin(dosen11);
+        dd.rerataUsiaDosenPerJK(dosen11); 
+        dd.infoDosenPalingTua(dosen11); 
+        dd.infoDosenPalingMuda(dosen11);
+
     }
 }
