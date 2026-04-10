@@ -1,7 +1,12 @@
 public class MahasiswaBerprestasi11 {
 
-    Mahasiswa11[] listMhs= new Mahasiswa11[5];
+    Mahasiswa11[] listMhs;
     int idx;
+
+    MahasiswaBerprestasi11(int jml){
+        listMhs = new Mahasiswa11[jml];
+        idx=0;
+    }
 
     void tambah(Mahasiswa11 m){
         if (idx<listMhs.length) {
@@ -30,4 +35,6 @@ public class MahasiswaBerprestasi11 {
             }
         }
     }
+
+    
 }
