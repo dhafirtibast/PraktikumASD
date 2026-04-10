@@ -31,5 +31,9 @@ public class MahasiswaDemo11 {
         System.out.println("Data mahasiswa setelah sorting dengan Selection Sort (ASC):");
         list.selectionSort();
         list.tampil();
+
+        System.out.println("Data mahasiswa setelah sorting dengan Insertion Sort (ASC):");
+        list.insertionSort();
+        list.tampil();
     }
 }
