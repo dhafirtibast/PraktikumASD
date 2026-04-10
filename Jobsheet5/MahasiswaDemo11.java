@@ -28,6 +28,8 @@ public class MahasiswaDemo11 {
         list.bubbleSort();
         list.tampil();
 
-        
+        System.out.println("Data mahasiswa setelah sorting dengan Selection Sort (ASC):");
+        list.selectionSort();
+        list.tampil();
     }
 }
