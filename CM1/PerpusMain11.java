@@ -16,13 +16,13 @@ public class PerpusMain11 {
             new Buku11("B003", "Pemrograman", 2021),
             new Buku11("B004", "Fisika", 2024)
         };
-
+        //Modifikasi A3
         Peminjaman11[] pinjam = {
-            new Peminjaman11(mhs[0], buku[0], 7),
-            new Peminjaman11(mhs[1], buku[1], 3),
-            new Peminjaman11(mhs[2], buku[2], 10),
-            new Peminjaman11(mhs[2], buku[3], 6),
-            new Peminjaman11(mhs[0], buku[1], 4)
+            new Peminjaman11(mhs[0], buku[0], 7, "Lama"),
+            new Peminjaman11(mhs[1], buku[1], 3, "Cepat"),
+            new Peminjaman11(mhs[2], buku[2], 10, "Lama"),
+            new Peminjaman11(mhs[2], buku[3], 6, "Lama"),
+            new Peminjaman11(mhs[0], buku[1], 4, "Normal")
         };
 
         int pilihan;
@@ -33,6 +33,8 @@ public class PerpusMain11 {
             System.out.println("3. Tampilkan Peminjaman");
             System.out.println("4. Urutkan Berdasarkan Denda");
             System.out.println("5. Cari Berdasarkan NIM");
+            System.out.println("6. Cari Berdasarkan Nama Mahasiswa");
+            System.out.println("7. Hitung Rata-rata Lama Peminjaman");
             System.out.println("0. Keluar");
             System.out.print("Pilih: ");
             pilihan = sc.nextInt();
@@ -52,7 +54,6 @@ public class PerpusMain11 {
                     for (Peminjaman11 p : pinjam) p.tampilPeminjaman();
                     break;
                 case 4:
-                    
                     for (int i = 0; i < pinjam.length-1; i++) {
                         int max = i;
                         for (int j = i+1; j < pinjam.length; j++) {
@@ -83,6 +84,28 @@ public class PerpusMain11 {
                     if (!found) {
                         System.out.println("Data dengan NIM " + cariNIM + " tidak ditemukan.");
                     }
+                    break;
+                case 6:
+                    //Modifikasi A3 
+                    System.out.print("Masukkan Nama Mahasiswa: ");
+                    String cariNama = sc.nextLine();
+                    boolean foundNama = false;
+                    
+                    System.out.println("\n--- Hasil Pencarian Nama " + cariNama + " ---");
+                    for (Peminjaman11 p : pinjam) {
+                        if (p.mhs.nama.equalsIgnoreCase(cariNama)) {
+                            p.tampilPeminjaman();
+                            foundNama = true;
+                        }
+                    }
+                    if (!foundNama) {
+                        System.out.println("Data dengan Nama " + cariNama + " tidak ditemukan.");
+                    }
+                    break;
+                case 7:
+                    //Modifikasi A3
+                    Peminjaman11 tempPinjam = new Peminjaman11(mhs[0], buku[0], 0, "null");
+                    tempPinjam.hitungRataRataLamaPinjam(pinjam);
                     break;
                 case 0:
                     System.out.println("Keluar");
