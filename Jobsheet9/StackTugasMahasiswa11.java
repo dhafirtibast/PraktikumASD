@@ -26,20 +26,21 @@ public class StackTugasMahasiswa11 {
     }
 
     void push(Mahasiswa11 mhs) {
-        if (isFull()) {
+        if (!isFull()) {
             top++;
+            stack[top] = mhs;
         } else {
             System.out.println("Stack penuh! Tidak bisa menambahkan tugas lagi.");
         }
     }
 
     Mahasiswa11 pop() {
-        if (isEmpty()) {
+        if (!isEmpty()) {
             Mahasiswa11 m = stack[top];
             top--;
             return m;
         } else {
-            System.out.println("STack kosong! Tidak ada tugas untuk dinilai.");
+            System.out.println("Stack kosong! Tidak ada tugas untuk dinilai.");
             return null;
         }
     }
@@ -54,9 +55,24 @@ public class StackTugasMahasiswa11 {
     }
 
     void print() {
-        for (int i = 0; i <= top; i++) {
+        // Urutan tugas harusnya dari yang terakhir ke yang pertama mengumpulkan (Pertanyaan nomor 1)
+        for (int i = top; i >= 0; i--) { 
             System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
         }
         System.out.println("");
+    }
+
+    //Modifikasi (Pertanyaan nomor 4)
+    void lihatTugasTerbawah() {
+        if (!isEmpty()) {
+            System.out.println("Tugas pertama dikumpulkan oleh " + stack[0].nama);
+        } else {
+            System.out.println("Stack kosong! Tidak ada tugas yang dikumpulkan.");
+        }
+    }
+
+    //Modifikasi (Pertanyaan nomor 5)
+    int dikumpulkan() {
+        return top + 1;
     }
 }
