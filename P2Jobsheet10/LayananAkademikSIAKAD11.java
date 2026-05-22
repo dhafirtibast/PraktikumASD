@@ -46,6 +46,9 @@ public class LayananAkademikSIAKAD11 {
                 case 5:
                     System.out.println("Jumlah mahasiswa dalam antrian: " + antrian.getJumlahAntrian());
                     break;
+                case 6: // modifikasi percobaan 1 (peek rear)
+                    antrian.lihatAkhir();
+                    break;
                 case 0:
                     System.out.println("Terima kasih!");
                     break;
