@@ -22,16 +22,26 @@ public class QueueMain11 {
             pilih = sc.nextInt();
             switch (pilih) {
                 case 1:
-                    System.out.print("Masukkan data baru: ");
-                    int dataMasuk = sc.nextInt();
-                    Q.enqueue(dataMasuk);
+                    if (Q.isFull()) {
+                        System.out.println("Queue sudah penuh");
+                        pilih = 0; //modif percobaan 1 (overflow)
+                    } else {
+                        System.out.print("Masukkan data baru: ");
+                        int dataMasuk = sc.nextInt();
+                        Q.enqueue(dataMasuk);
+                    }
                     break;
                 case 2:
-                    int dataKeluar = Q.dequeue();
-                    if (dataKeluar != 0) {
-                        System.out.println("Data yang dikeluarkan: " + dataKeluar);
-                        break;
+                    if (Q.isEmpty()) {
+                        System.out.println("Queue masih kosong.");
+                        pilih = 0; //modif percobaan 1 (underflow)
+                    } else {
+                        int dataKeluar = Q.dequeue();
+                        if (dataKeluar != 0) {
+                            System.out.println("Data yang dikeluarkan: " + dataKeluar);
+                        }
                     }
+                    break;
                 case 3:
                     Q.print();
                     break;
