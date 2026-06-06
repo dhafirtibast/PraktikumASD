@@ -13,6 +13,6 @@ public class Mahasiswa11 {
     }
 
     void tampilInformasi() {
-        System.out.printf("%-10s %10s %4s %5s\n", nama, nim, kelas, ipk);
+        System.out.printf("%-10s %15s %10s %10s\n", nama, nim, kelas, ipk);
     }
 }
