@@ -111,7 +111,8 @@ public class MahasiswaBerprestasi11 {
             if (cari == listMhs[mid].ipk) {
                 return (mid);
             }
-            else if (listMhs[mid].ipk > cari) {
+            //Modif descending
+            else if (listMhs[mid].ipk < cari) {
                 return findBinarySearch(cari, left, mid-1);
             }
             else {

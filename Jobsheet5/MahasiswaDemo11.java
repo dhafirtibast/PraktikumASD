@@ -3,7 +3,11 @@ import java.util.Scanner;
 public class MahasiswaDemo11 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int jumMhs=5;
+
+        System.out.print("Masukkan jumlah mahasiswa: "); // Modif input jumlah mahasiswa
+        int jumMhs=sc.nextInt(); // Modif input jumlah mahasiswa
+        sc.nextLine();
+
         MahasiswaBerprestasi11 list = new MahasiswaBerprestasi11(jumMhs);
 
         for (int i = 0; i < jumMhs; i++) {
