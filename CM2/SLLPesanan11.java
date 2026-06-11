@@ -15,22 +15,31 @@ public class SLLPesanan11 {
     void sortByNama() {
         if (head == null || head.next == null) return;
 
-        boolean swapped;
-        do {
-            swapped = false;
-            NodePesanan11 tempCurrent = head;
-
-            while (tempCurrent.next != null) {
-                if (tempCurrent.data.namaPesanan.compareToIgnoreCase(tempCurrent.next.data.namaPesanan) > 0) {
-                    Pesanan11 tempData = tempCurrent.data;
-                    tempCurrent.data = tempCurrent.next.data;
-                    tempCurrent.next.data = tempData;
-                    
-                    swapped = true;
+        NodePesanan11 sortedHead = null;
+        NodePesanan11 current = head;
+        while (current != null) {
+            NodePesanan11 nextNode = current.next;
+            if (sortedHead == null || current.data.namaPesanan.compareToIgnoreCase(sortedHead.data.namaPesanan) < 0) {
+                current.next = sortedHead;
+                sortedHead = current;
+            } 
+            else {
+                NodePesanan11 temp = sortedHead;
+                while (temp.next != null && temp.next.data.namaPesanan.compareToIgnoreCase(current.data.namaPesanan) < 0) {
+                    temp = temp.next;
                 }
-                tempCurrent = tempCurrent.next;
+                current.next = temp.next;
+                temp.next = current;
             }
-        } while (swapped);
+            current = nextNode;
+        }
+        head = sortedHead;
+
+        NodePesanan11 tempTail = head;
+        while (tempTail != null && tempTail.next != null) {
+            tempTail = tempTail.next;
+        }
+        tail = tempTail;
     }
 
     void printLaporan() {
