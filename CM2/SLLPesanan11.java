@@ -22,8 +22,7 @@ public class SLLPesanan11 {
             if (sortedHead == null || current.data.namaPesanan.compareToIgnoreCase(sortedHead.data.namaPesanan) < 0) {
                 current.next = sortedHead;
                 sortedHead = current;
-            } 
-            else {
+            } else {
                 NodePesanan11 temp = sortedHead;
                 while (temp.next != null && temp.next.data.namaPesanan.compareToIgnoreCase(current.data.namaPesanan) < 0) {
                     temp = temp.next;

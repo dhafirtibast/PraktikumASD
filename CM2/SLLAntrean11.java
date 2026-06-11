@@ -8,8 +8,7 @@ public class SLLAntrean11 {
         NodePembeli11 nd = new NodePembeli11(noAntreAuto, p);
         if (head == null) {
             head = tail = nd;
-        } 
-        else {
+        } else {
             tail.next = nd; 
             tail = nd;      
         }
